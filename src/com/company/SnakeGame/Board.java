@@ -15,7 +15,7 @@ public class Board extends JPanel implements ActionListener{
     private Image head;
 
     private final int DOT_SIZE = 10;
-    private final int ALL_DOTS = 900;
+    private final int ALL_DOTS = 2500;
 
     private int apple_x;
     private int apple_y;
@@ -35,7 +35,7 @@ public class Board extends JPanel implements ActionListener{
     private Timer timer;
 
     Board(){
-        setPreferredSize(new Dimension(300, 300));
+        setPreferredSize(new Dimension(500, 500));
         setBackground(Color.BLACK);
         addKeyListener(new TAdapter());
         setFocusable(true);
@@ -72,7 +72,7 @@ public class Board extends JPanel implements ActionListener{
 
     public void locateApple(){
 
-        int RANDOM_POSITION = 29;
+        int RANDOM_POSITION = 49;
         int r = (int)(Math.random() * RANDOM_POSITION);
         apple_x = (r * DOT_SIZE);
 
@@ -123,9 +123,9 @@ public class Board extends JPanel implements ActionListener{
 
         g.setColor(Color.WHITE);
         g.setFont(font);
-        g.drawString(message1, (300 - metrics.stringWidth(message1)) / 2 , (300-metrics.getHeight()-20)/2);
-        g.drawString(message2, (300 - metrics.stringWidth(message2)) / 2 , 300/2);
-        g.drawString(message3, (300 - metrics.stringWidth(message3)) / 2 , (300+metrics.getHeight()+20)/2);
+        g.drawString(message1, (500 - metrics.stringWidth(message1)) / 2 , (500-metrics.getHeight()-20)/2);
+        g.drawString(message2, (500 - metrics.stringWidth(message2)) / 2 , 500/2);
+        g.drawString(message3, (500 - metrics.stringWidth(message3)) / 2 , (500+metrics.getHeight()+20)/2);
     }
 
 
@@ -139,7 +139,7 @@ public class Board extends JPanel implements ActionListener{
             }
         }
 
-        if(y[0] >= 300 || x[0] >= 300 || x[0] < 0 || y[0] < 0){
+        if(y[0] >= 500 || x[0] >= 500 || x[0] < 0 || y[0] < 0){
             inGame = false;
         }
 
